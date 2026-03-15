@@ -1,0 +1,18 @@
+body {
+    background-image: url(../ASSETS/saladeaula.png);
+    margin: 0;
+    height: 100vh;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.C1 {
+  text-align: center;
+
+}
