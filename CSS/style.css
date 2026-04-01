@@ -1,25 +1,96 @@
 body {
-    background-image: url(../ASSETS/saladeaula.png);
-    margin: 0;
-    height: 100vh;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-image: url("../ASSETS/saladeaula.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  height: 100vh;
 }
 
-.C1 {
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.Tudo {
+  padding: 40px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.Texto {
+  max-width: 500px;
   font-size: 20px;
-  margin-top: -40px;
-  margin-right: 500PX;
+}
+
+.Titulo {
+  color: #404040;
 }
 
 .Logo {
-  width: 80x;
-  height: 80px;
-  margin-top: -400px;
+  width: 100px;
+}
+
+/* Botões da tela Inicial */
+
+.Botao {
+  margin-top: 20px;
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  background-color: #2EAD55;
+  border: none;
+  color: white;
+}
+
+.Botao {
+  display: inline-block;
+  background-color: #2EAD55;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.Botao:hover {
+  transform: scale(1.05);
+  background-color: #249447;
+}
+
+.Botao2 {
+  margin-top: 20px;
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  background-color: white;
+  border: none;
+  color: #2EAD55;
+  margin-left: 20px;
+}
+
+.Botao2 {
+  display: inline-block;
+  background-color: white;
+  color: #2EAD55;
+  padding: 5px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.Botao2:hover {
+  transform: scale(1.05);
+  background-color: white;
+}
+
+
+
+.Ilustrativa {
+  max-width: 500px;
+  height: auto;
 }
