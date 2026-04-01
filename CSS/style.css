@@ -13,6 +13,13 @@ body {
 }
 
 .C1 {
-  text-align: center;
+  font-size: 20px;
+  margin-top: -40px;
+  margin-right: 500PX;
+}
 
+.Logo {
+  width: 80x;
+  height: 80px;
+  margin-top: -400px;
 }
