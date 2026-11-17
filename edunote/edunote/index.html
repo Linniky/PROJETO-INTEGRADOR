@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduNote — administração de alunos</title>
+<link rel="icon" type="image/svg+xml" href="img/logo-icone.svg">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.58.0/dist/umd/supabase.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+  <aside class="sidebar">
+    <div class="brand"><svg class="logo-mark" width="34" height="30" viewBox="0 0 64 56" aria-hidden="true"><rect class="lm-tab" x="0" y="0" width="28" height="11" rx="2.5"/><rect class="lm-body" x="0" y="8" width="64" height="48" rx="3.5"/><text x="32" y="41" text-anchor="middle">EN</text></svg><span>EduNote<span class="dot">.</span></span></div>
+    <div class="nav-item active" data-view="dashboard">Painel</div>
+    <div class="nav-item" data-view="students">Alunos <span class="nav-count" id="count-students">0</span></div>
+    <div class="nav-item" data-view="events">Eventos <span class="nav-count" id="count-events">0</span></div>
+    <div class="nav-item" data-view="settings">Configurações</div>
+    <div class="sidebar-foot">
+      <div class="school">ETE Antônio Arruda de Farias</div>
+      <div id="save-status"><span class="led"></span><span id="save-label">dados salvos</span></div>
+      <div id="user-box"></div>
+    </div>
+  </aside>
+
+  <main class="main" id="main"></main>
+</div>
+
+<div class="overlay hidden" id="overlay"></div>
+
+<div class="auth" id="auth">
+  <form class="auth-card" id="auth-form" data-mode="login" novalidate>
+    <div class="auth-brand"><svg class="logo-mark" width="52" height="46" viewBox="0 0 64 56" aria-hidden="true"><rect class="lm-tab" x="0" y="0" width="28" height="11" rx="2.5"/><rect class="lm-body" x="0" y="8" width="64" height="48" rx="3.5"/><text x="32" y="41" text-anchor="middle">EN</text></svg><h1>EduNote<span style="color:var(--correction)">.</span></h1></div>
+    <p class="detail-turma" style="margin:0 0 1.2rem;">ETE Antônio Arruda de Farias</p>
+    <h3 id="au-title" style="margin-bottom:1rem;">Entrar</h3>
+    <p class="empty" data-show="forgot" hidden>Informe o e-mail da sua conta. Enviaremos um link para você criar uma nova senha.</p>
+    <div class="field" data-show="login signup forgot"><label for="au-email">E-mail</label><input id="au-email" type="email" autocomplete="username"></div>
+    <div class="field" data-show="login signup recovery"><label for="au-pass" id="au-pass-label">Senha</label><input id="au-pass" type="password" autocomplete="current-password"></div>
+    <div class="pw-meter" data-show="signup recovery" hidden>
+      <div class="pw-bar"><span id="pw-fill"></span></div>
+      <div class="pw-label" id="pw-label" aria-live="polite"></div>
+    </div>
+    <div class="auth-msg" id="auth-msg" role="alert"></div>
+    <div class="auth-actions">
+      <button class="btn btn-primary" type="submit" id="au-submit">Entrar</button>
+      <button class="btn" type="button" id="au-to-signup" data-show="login">Criar conta</button>
+      <button class="btn" type="button" id="au-to-login" data-show="signup forgot" hidden>Voltar</button>
+    </div>
+    <div class="auth-foot" data-show="login">
+      <button class="link-btn" type="button" id="au-to-forgot">Esqueci minha senha</button>
+    </div>
+  </form>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

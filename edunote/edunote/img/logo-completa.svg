@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="96" viewBox="0 0 300 96" role="img" aria-label="EduNote">
+  <rect width="300" height="96" rx="18" fill="#20293A"/>
+  <rect x="22" y="26" width="28" height="11" rx="2.5" fill="#C0902F"/>
+  <rect x="22" y="35" width="56" height="40" rx="3.5" fill="#EBE2C9"/>
+  <text x="50" y="64" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="700" fill="#20293A">EN</text>
+  <text x="96" y="62" font-family="Fraunces, Georgia, serif" font-size="36" font-weight="600" fill="#EBE2C9">EduNote<tspan fill="#C0902F">.</tspan></text>
+</svg>
