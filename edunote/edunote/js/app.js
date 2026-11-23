@@ -1133,7 +1133,7 @@
       if(r.error) authMsg(authError(r.error.message));
       else if(r.data && r.data.session) await enter(r.data.session.user);
       else authMsg('Conta criada! Abra o link enviado ao seu e-mail e depois clique em Entrar.', true);
-    } catch(err){ authMsg('Falha de conexão. Tente de novo.'); }
+    } catch(err){ authMsg(netError(err)); }
     btns.forEach(function(b){ b.disabled = false; });
   }
   var recovering = BOOT_HASH.indexOf('type=recovery') !== -1;
@@ -1169,6 +1169,12 @@
     authMsg(''); updateMeter();
   }
   function setBusy(on){ authEl.querySelectorAll('button').forEach(function(b){ b.disabled = on; }); }
+  function netError(err){
+    console.error(err);
+    var m = String(err && err.message || err || '');
+    if(/fetch|network|load failed/i.test(m)) return 'Sem conexão com o servidor. Confira a internet, desative bloqueadores de anúncio e veja se o projeto do Supabase não está pausado.';
+    return 'Erro ao entrar: ' + m;
+  }
   async function doForgot(){
     var email = document.getElementById('au-email').value.trim();
     if(!email){ authMsg('Informe o e-mail da conta.'); return; }
@@ -1178,7 +1184,7 @@
       var r = await sb.auth.resetPasswordForEmail(email, { redirectTo: location.origin + location.pathname });
       if(r.error) authMsg(authError(r.error.message));
       else authMsg('Se este e-mail tiver conta, enviamos um link para criar uma nova senha. Confira também o spam.', true);
-    } catch(err){ authMsg('Falha de conexão. Tente de novo.'); }
+    } catch(err){ authMsg(netError(err)); }
     setBusy(false);
   }
   async function doRecovery(){
@@ -1189,7 +1195,7 @@
       var r = await sb.auth.updateUser({ password: pass });
       if(r.error) authMsg(authError(r.error.message));
       else { recovering = false; history.replaceState(null, '', location.pathname + location.search); setBusy(false); await enter(r.data.user); return; }
-    } catch(err){ authMsg('Falha de conexão. Tente de novo.'); }
+    } catch(err){ authMsg(netError(err)); }
     setBusy(false);
   }
   document.getElementById('auth-form').addEventListener('submit', function(ev){
