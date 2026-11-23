@@ -18,6 +18,7 @@
     <div class="brand"><svg class="logo-mark" width="34" height="30" viewBox="0 0 64 56" aria-hidden="true"><rect class="lm-tab" x="0" y="0" width="28" height="11" rx="2.5"/><rect class="lm-body" x="0" y="8" width="64" height="48" rx="3.5"/><text x="32" y="41" text-anchor="middle">EN</text></svg><span>EduNote<span class="dot">.</span></span></div>
     <div class="nav-item active" data-view="dashboard">Painel</div>
     <div class="nav-item" data-view="students">Alunos <span class="nav-count" id="count-students">0</span></div>
+    <div class="nav-item" data-view="groups">Grupos <span class="nav-count" id="count-groups">0</span></div>
     <div class="nav-item" data-view="events">Eventos <span class="nav-count" id="count-events">0</span></div>
     <div class="nav-item" data-view="settings">Configurações</div>
     <div class="sidebar-foot">
@@ -31,6 +32,8 @@
 </div>
 
 <div class="overlay hidden" id="overlay"></div>
+<div class="dlg-back hidden" id="dlg"><div class="dlg" role="dialog" aria-modal="true" aria-labelledby="dlg-title"><h3 id="dlg-title"></h3><div id="dlg-body"></div><div class="dlg-actions" id="dlg-actions"></div></div></div>
+<div id="toasts" aria-live="polite"></div>
 
 <div class="auth" id="auth">
   <form class="auth-card" id="auth-form" data-mode="login" novalidate>
