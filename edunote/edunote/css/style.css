@@ -357,3 +357,76 @@
 .logo-mark .lm-body{fill:var(--ink);}
 .logo-mark text{fill:var(--paper); font-family:'Fraunces', Georgia, serif; font-weight:700; font-size:24px;}
 .auth-brand{display:flex; align-items:center; gap:0.8rem; margin-bottom:0.3rem;}
+
+.dlg-back{position:fixed; inset:0; z-index:400; background:rgba(20,24,34,0.55); display:flex; align-items:center; justify-content:center; padding:1rem;}
+.dlg-back.hidden{display:none;}
+.dlg{width:min(440px,100%); max-height:88vh; overflow:auto; background:var(--card); border:1px solid var(--card-edge); border-radius:var(--radius); box-shadow:var(--shadow); padding:1.5rem;}
+.dlg.wide{width:min(560px,100%);}
+.dlg h3{margin-bottom:0.8rem;}
+.dlg p{margin:0 0 0.4rem; line-height:1.5;}
+.dlg-actions{display:flex; gap:0.6rem; justify-content:flex-end; margin-top:1.2rem;}
+.btn-danger-solid{background:var(--correction); border-color:var(--correction); color:#fff;}
+.btn-danger-solid:hover{filter:brightness(0.92);}
+#toasts{position:fixed; right:1rem; bottom:1rem; z-index:500; display:flex; flex-direction:column; gap:0.5rem;}
+.toast{background:var(--ink); color:var(--paper); padding:0.7rem 1rem; border-radius:var(--radius); box-shadow:var(--shadow); font-size:0.85rem; max-width:320px; transition:opacity .3s, transform .3s;}
+.toast.err{background:var(--correction); color:#fff;}
+.toast.out{opacity:0; transform:translateY(6px);}
+.pick{max-height:240px; overflow:auto; border:1px solid var(--card-edge); border-radius:var(--radius); padding:0.3rem 0.6rem;}
+.pick-row{display:flex; gap:0.5rem; align-items:center; padding:0.3rem 0; cursor:pointer; font-size:0.9rem;}
+.group-card{margin-bottom:1rem;}
+.group-head{display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; margin-bottom:0.7rem;}
+.chips{display:flex; flex-wrap:wrap; gap:0.4rem;}
+.chip{background:var(--paper-deep); border:1px solid var(--card-edge); border-radius:999px; padding:0.25rem 0.7rem; font-size:0.82rem;}
+
+/* ---- sem cursor de digitação fora dos campos ---- */
+body{caret-color:transparent;}
+input,textarea{caret-color:var(--ink); user-select:text;}
+.sidebar,.view-head,.hero,.stat-card,.student-card,.panel-box h3,.btn,.icon-btn,.tab-btn,.nav-item,.fchip,.chip,.eyebrow,.brand{user-select:none; -webkit-user-select:none;}
+:focus:not(:focus-visible){outline:none;}
+/* ---- painel ---- */
+.hero{display:flex; justify-content:space-between; align-items:flex-end; gap:1rem; flex-wrap:wrap; margin-bottom:1.6rem; padding-bottom:1rem; border-bottom:1px solid var(--card-edge);}
+.hero h2{font-size:2.1rem; margin:0;}
+.hero-date{font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:var(--ink-soft); text-transform:capitalize;}
+.stat-grid{grid-template-columns:repeat(auto-fit,minmax(190px,1fr));}
+.stat-card{display:flex; gap:0.9rem; align-items:center; border-top:3px solid var(--acc); transition:transform .15s, box-shadow .15s;}
+.stat-card:hover{transform:translateY(-2px); box-shadow:var(--shadow);}
+.stat-card .ico{width:44px; height:44px; border-radius:12px; display:grid; place-items:center; font-size:1.3rem; flex:none; background:color-mix(in srgb,var(--acc) 16%,var(--card));}
+.stat-name{font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft);}
+.stat-card .num{margin-top:0.1rem; font-size:2rem;}
+.dist{display:flex; height:14px; border-radius:7px; overflow:hidden; background:var(--paper-deep); margin:0.4rem 0 0.9rem;}
+.dist span{display:block;}
+.legend{display:grid; grid-template-columns:1fr 1fr; gap:0.4rem 0.8rem; font-size:0.82rem;}
+.legend i,.dot-cat{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:0.45rem;}
+.hbar{display:flex; align-items:center; gap:0.7rem; margin:0.5rem 0; font-size:0.82rem;}
+.hbar .lbl{width:84px; flex:none;}
+.hbar .track{flex:1; height:10px; border-radius:5px; background:var(--paper-deep); overflow:hidden;}
+.hbar .fill{display:block; height:100%; border-radius:5px; background:var(--sage);}
+.hbar .n{width:1.6rem; text-align:right; font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--ink-soft);}
+.late .meta{color:var(--correction);}
+/* ---- alunos ---- */
+.avatar{width:38px; height:38px; border-radius:50%; background:var(--av); color:#fff; display:grid; place-items:center; font-weight:600; font-size:0.85rem; flex:none;}
+.sc-top{display:flex; align-items:center; gap:0.7rem;}
+.sc-name{flex:1; min-width:0;}
+.sc-name h4{margin:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.student-card{border-top:3px solid var(--av);}
+.student-grid.list{grid-template-columns:1fr;}
+.student-grid.list .student-card{display:flex; align-items:center; gap:1.2rem; padding:0.7rem 1rem;}
+.student-grid.list .sc-top{flex:1;}
+.student-grid.list .mini-stats{margin:0;}
+.swatches{display:flex; gap:0.45rem; flex-wrap:wrap;}
+.sw{width:26px; height:26px; border-radius:50%; border:2px solid transparent; padding:0;}
+.sw.sel{border-color:var(--ink); box-shadow:inset 0 0 0 2px var(--card);}
+/* ---- grupos ---- */
+.group-card{border-left:5px solid var(--gc);}
+.g-emoji{margin-right:0.2rem;}
+.chip.lead{border-color:var(--gold); font-weight:600;}
+.chip .dot-cat{margin-right:0.35rem;}
+/* ---- eventos ---- */
+.ev-row{border-left:4px solid var(--cc); align-items:center; gap:1rem;}
+.date-badge{width:46px; text-align:center; border-radius:8px; background:color-mix(in srgb,var(--cc) 15%,var(--card)); padding:0.3rem 0; flex:none; line-height:1.1;}
+.date-badge b{display:block; font-family:'Fraunces',serif; font-size:1.2rem;}
+.date-badge span{font-size:0.62rem; font-family:'IBM Plex Mono',monospace; letter-spacing:0.05em; color:var(--ink-soft);}
+.cat-tag{font-size:0.68rem; font-family:'IBM Plex Mono',monospace; padding:0.1rem 0.5rem; border-radius:999px; background:color-mix(in srgb,var(--cc) 18%,var(--card)); margin-left:0.4rem;}
+.fchips{display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:1rem; align-items:center;}
+.fchip{border:1px solid var(--card-edge); background:var(--card); border-radius:999px; padding:0.3rem 0.8rem; font-size:0.78rem; color:var(--ink);}
+.fchip.on{background:var(--ink); color:var(--paper); border-color:var(--ink);}
